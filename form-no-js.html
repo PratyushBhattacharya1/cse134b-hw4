@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A form for HW 4 that uses only HTML & CSS sans JavaScript" />
+    <title>Form without JS</title>
+    <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+    <header>
+        <nav>
+            <menu aria-label="Main Navigation">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="assets/docs/pratyush-bhattacharya-resume.pdf" download>Resume</a></li>
+            </menu>
+        </nav>
+    </header>
+
+    <main>
+        <h1>HTML form</h1>
+
+        <form method="post" action="https://httpbin.org/post">
+            <fieldset>
+                <legend>Comment Information</legend>
+
+                <label for="name">Enter name:</label>
+                <input id="name" class="form-field" name="name" type="text" placeholder="John Doe" autocomplete="name" />
+
+                <label for="email">Enter email:</label>
+                <input id="email" class="form-field" name="email" type="email" placeholder="John_Doe@email.com" autocomplete="email"
+                    required />
+                <input-hint aria-label="Error">This field is required.</input-hint>
+
+                <label for="comment">Enter Comment:</label>
+                <textarea id="comment" class="form-field" name="comment" placeholder="I like your website..." required></textarea>
+                <input-hint aria-label="Error">This field is required.</input-hint>
+
+                <input id="possible_bot" name="possible_bot" type="hidden" value="true" required>
+
+                <button type="submit">Submit</button>
+
+            </fieldset>
+        </form>
+    </main>
+
+    <footer>
+        <p>Pratyush Bhattacharya<br>© 2026</p>
+        <ul>
+            <li><a href="mailto:pratyushbhattacharya1@gmail.com">Email</a></li>
+            <li><a href="https://github.com/PratyushBhattacharya1">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/pratyush--bhattacharya/">LinkedIn</a></li>
+            <li><a href="assets/docs/pratyush-bhattacharya-resume.pdf">Resume (PDF)</a></li>
+        </ul>
+    </footer>
+</body>
+
+</html>

@@ -42,26 +42,27 @@
             <form>
                 <div>
                     <label for="name">Name</label>
-                    <input id="name" name="name" autocomplete="name" required>
+                    <input id="name" name="name" class="form-field" autocomplete="name" required>
                 </div>
                 <div>
                     <label for="email">Email</label>
-                    <input type="email" id="email" name="email" autocomplete="email" required>
+                    <input type="email" id="email" class="form-field" name="email" autocomplete="email" required>
                 </div>
                 <fieldset>
                     <legend>Reason for reaching out</legend>
-                    <input type="radio" id="reason-hiring" name="reason" value="hiring" required>
+                    <input type="radio" id="reason-hiring" class="form-field" name="reason" value="hiring" required>
                     <label for="reason-hiring">Hiring opportunity</label>
-                    <input type="radio" id="reason-internship" name="reason" value="internship">
+                    <input type="radio" id="reason-internship" class="form-field" name="reason" value="internship">
                     <label for="reason-internship">Internship</label>
-                    <input type="radio" id="reason-collaboration" name="reason" value="collaboration">
+                    <input type="radio" id="reason-collaboration" class="form-field" name="reason"
+                        value="collaboration">
                     <label for="reason-collaboration">Collaboration</label>
-                    <input type="radio" id="reason-other" name="reason" value="other">
+                    <input type="radio" id="reason-other" class="form-field" name="reason" value="other">
                     <label for="reason-other">Other</label>
                 </fieldset>
                 <div>
                     <label for="message">Message</label>
-                    <textarea id="message" name="message" rows="5" required></textarea>
+                    <textarea id="message" class="form-field" name="message" rows="5" required></textarea>
                 </div>
                 <button type="submit">Send message</button>
             </form>
@@ -77,8 +78,7 @@
     </main>
 
     <footer>
-        <p>Pratyush Bhattacharya<br>© 2026 · Built with semantic HTML · Last updated <time datetime="2026-10-19">October
-                19, 2026</time></p>
+        <p>Pratyush Bhattacharya<br>© 2026</p>
         <ul>
             <li><a href="mailto:name@example.com">Email</a></li>
             <li><a href="https://github.com/">GitHub</a></li>

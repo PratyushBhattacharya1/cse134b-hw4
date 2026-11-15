@@ -258,6 +258,33 @@ textarea {
     font: inherit;
 }
 
+label:has(+ .form-field:required)::after {
+    content: " *";
+    color: red;
+    vertical-align: super;
+}
+
+.form-field:user-invalid {
+    border: 0.1rem solid red;
+}
+
+input-hint {
+    display: none;
+    color: red;
+    font-size: small;
+    margin-top: 0.25rem;
+    grid-column: 2;
+}
+
+.form-field:user-invalid+input-hint {
+    display: block;
+}
+
+.form-field:required:user-valid {
+    border-color: #188038;
+    border-width: 0.2rem;
+}
+
 fieldset {
     display: grid;
     grid-template-columns: auto 1fr;
