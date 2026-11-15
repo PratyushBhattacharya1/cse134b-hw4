@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit.">
+    <title>Contact · Pratyush Bhattacharya</title>
+    <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <menu aria-label="Main Navigation">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html" aria-current="page">Contact</a></li>
+                <li><a href="assets/docs/pratyush-bhattacharya-resume.pdf" download>Resume</a></li>
+            </menu>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Contact</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+
+        <section>
+            <h2>Reach me directly</h2>
+            <ul>
+                <li>Email: <a href="mailto:name@example.com">name@example.com</a></li>
+                <li>GitHub: <a href="https://github.com/">github.com/username</a></li>
+                <li>LinkedIn: <a href="https://www.linkedin.com/">linkedin.com/in/username</a></li>
+                <li>Resume: <a href="assets/docs/pratyush-bhattacharya-resume.pdf" download>Download PDF</a></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Send a message</h2>
+            <form>
+                <div>
+                    <label for="name">Name</label>
+                    <input id="name" name="name" autocomplete="name" required>
+                </div>
+                <div>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" autocomplete="email" required>
+                </div>
+                <fieldset>
+                    <legend>Reason for reaching out</legend>
+                    <input type="radio" id="reason-hiring" name="reason" value="hiring" required>
+                    <label for="reason-hiring">Hiring opportunity</label>
+                    <input type="radio" id="reason-internship" name="reason" value="internship">
+                    <label for="reason-internship">Internship</label>
+                    <input type="radio" id="reason-collaboration" name="reason" value="collaboration">
+                    <label for="reason-collaboration">Collaboration</label>
+                    <input type="radio" id="reason-other" name="reason" value="other">
+                    <label for="reason-other">Other</label>
+                </fieldset>
+                <div>
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit">Send message</button>
+            </form>
+        </section>
+
+        <dialog>
+            <h2>Message sent</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <form method="dialog">
+                <button>Close</button>
+            </form>
+        </dialog>
+    </main>
+
+    <footer>
+        <p>Pratyush Bhattacharya<br>© 2026 · Built with semantic HTML · Last updated <time datetime="2026-10-19">October
+                19, 2026</time></p>
+        <ul>
+            <li><a href="mailto:name@example.com">Email</a></li>
+            <li><a href="https://github.com/">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/">LinkedIn</a></li>
+            <li><a href="assets/docs/pratyush-bhattacharya-resume.pdf">Resume (PDF)</a></li>
+        </ul>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit.">
+    <title>Projects · Pratyush Bhattacharya</title>
+    <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <menu aria-label="Main Navigation">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html" aria-current="page">Projects</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="assets/docs/pratyush-bhattacharya-resume.pdf" download>Resume</a></li>
+            </menu>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Projects</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+        <p class="filters">
+            Filter:
+            <a href="projects.html">All</a>
+            <a href="projects.html?tag=full-stack">Full-stack</a>
+            <a href="projects.html?tag=ai-ml">AI/ML</a>
+            <a href="projects.html?tag=data-viz">Data viz</a>
+            <a href="projects.html?tag=desktop">Desktop tools</a>
+        </p>
+
+        <article id="reviewbench">
+            <picture>
+                <source srcset="https://placehold.co/320x180/avif?text=ReviewBench" type="image/avif">
+                <source srcset="https://placehold.co/320x180/webp?text=ReviewBench" type="image/webp">
+                <img src="https://placehold.co/320x180/png?text=ReviewBench" alt="Screenshot of ReviewBench" width="320"
+                    height="180">
+            </picture>
+            <project-meta>Lorem · Ipsum · Dolor</project-meta>
+            <h2>ReviewBench</h2>
+            <p>LLM evaluation harness for code-review tools.</p>
+            <h3>Problem</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <h3>Approach</h3>
+            <p>Lorem ipsum dolor sit amet, <i>LLM-as-judge</i> consectetur adipiscing elit, sed do eiusmod tempor
+                incididunt ut labore.</p>
+            <h3>Result</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p>
+                <label for="reviewbench-roadmap">Roadmap</label>
+                <progress id="reviewbench-roadmap" max="4" value="2">2 of 4 milestones</progress>
+            </p>
+            <ul>
+                <li><tech-tag>Lorem</tech-tag></li>
+                <li><tech-tag>Ipsum</tech-tag></li>
+                <li><tech-tag>Dolor</tech-tag></li>
+                <li><tech-tag>Amet</tech-tag></li>
+            </ul>
+            <action-bar>
+                <a href="https://github.com/">View source code</a>
+                <a href="projects.html#reviewbench">Read the write-up</a>
+                <a href="projects.html#reviewbench">Watch the demo</a>
+            </action-bar>
+        </article>
+
+        <article id="schools-map">
+            <iframe
+                src="https://www.openstreetmap.org/export/embed.html?bbox=-124.5%2C32.5%2C-114.1%2C42.0&amp;layer=mapnik"
+                title="Map of California, a placeholder for the live schools map" width="320" height="180"
+                loading="lazy"></iframe>
+            <project-meta>Lorem · Team project · Ipsum</project-meta>
+            <h2>California Public Schools Map</h2>
+            <p>Does inequality shape education? An interactive map of income and K–12 school quality.</p>
+            <h3>Problem</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <h3>Approach</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <h3>Result</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <ul>
+                <li><tech-tag>Lorem</tech-tag></li>
+                <li><tech-tag>Ipsum</tech-tag></li>
+                <li><tech-tag>Dolor</tech-tag></li>
+                <li><tech-tag>Amet</tech-tag></li>
+            </ul>
+            <action-bar>
+                <a href="https://github.com/">View source code</a>
+                <a href="projects.html#schools-map">Live site</a>
+                <a href="projects.html#schools-map">Watch the demo</a>
+            </action-bar>
+        </article>
+
+        <article id="desktop-widgets">
+            <picture>
+                <source srcset="https://placehold.co/320x180/avif?text=Desktop+Widgets" type="image/avif">
+                <source srcset="https://placehold.co/320x180/webp?text=Desktop+Widgets" type="image/webp">
+                <img src="https://placehold.co/320x180/png?text=Desktop+Widgets"
+                    alt="Screenshot of the Desktop Widget System" width="320" height="180" loading="lazy">
+            </picture>
+            <project-meta>Lorem · Personal project</project-meta>
+            <h2>Desktop Widget System</h2>
+            <p><b>Electron</b> widgets for clock, calendar, and email preview, plus <b>AutoHotkey</b> desktop switching.
+            </p>
+            <h3>Problem</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <h3>Approach</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <h3>Result</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <ul>
+                <li><tech-tag>Lorem</tech-tag></li>
+                <li><tech-tag>Ipsum</tech-tag></li>
+                <li><tech-tag>Dolor</tech-tag></li>
+            </ul>
+            <action-bar>
+                <a href="https://github.com/">View source code</a>
+                <a href="projects.html#desktop-widgets">Watch the demo</a>
+            </action-bar>
+        </article>
+
+        <article id="student-planner">
+            <svg role="img" aria-label="Architecture diagram of the Student Planner Backend" width="320" height="80">
+                <rect x="5" y="20" width="90" height="40" fill="none" stroke="black" />
+                <text x="50" y="45" text-anchor="middle">Lorem</text>
+                <line x1="95" y1="40" x2="115" y2="40" stroke="black" />
+                <rect x="115" y="20" width="90" height="40" fill="none" stroke="black" />
+                <text x="160" y="45" text-anchor="middle">Ipsum</text>
+                <line x1="205" y1="40" x2="225" y2="40" stroke="black" />
+                <rect x="225" y="20" width="90" height="40" fill="none" stroke="black" />
+                <text x="270" y="45" text-anchor="middle">Dolor</text>
+            </svg>
+            <project-meta>Lorem · Internship · Ipsum</project-meta>
+            <h2>Student Planner Backend</h2>
+            <p>Internship work at Lyntra: a PostgreSQL planner with AI-generated subtasks.</p>
+            <h3>Problem</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <h3>Approach</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <h3>Result</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <ul>
+                <li><tech-tag>Lorem</tech-tag></li>
+                <li><tech-tag>Ipsum</tech-tag></li>
+                <li><tech-tag>Dolor</tech-tag></li>
+            </ul>
+            <action-bar>
+                <a href="projects.html#student-planner">Read the case study</a>
+            </action-bar>
+        </article>
+    </main>
+
+    <footer>
+        <p>Pratyush Bhattacharya<br>© 2026 · Built with semantic HTML · Last updated <time datetime="2026-10-19">October
+                19, 2026</time></p>
+        <ul>
+            <li><a href="mailto:name@example.com">Email</a></li>
+            <li><a href="https://github.com/">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/">LinkedIn</a></li>
+            <li><a href="assets/docs/pratyush-bhattacharya-resume.pdf">Resume (PDF)</a></li>
+        </ul>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit.">
+    <title>Experiments · Pratyush Bhattacharya</title>
+    <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/styles.css">
+    
+</head>
+
+<body>
+    <header>
+        <nav>
+            <menu aria-label="Main Navigation">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="assets/docs/pratyush-bhattacharya-resume.pdf" download>Resume</a></li>
+            </menu>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Experiments</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+
+        <section>
+            <h2>Template</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <template id="project-card">
+                <article>
+                    <h3>Project title</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <ul>
+                        <li><tech-tag>Lorem</tech-tag></li>
+                    </ul>
+                </article>
+            </template>
+        </section>
+
+        <section>
+            <h2>Audio</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <audio controls preload="none">
+                <source src="https://mdn.github.io/shared-assets/audio/t-rex-roar.mp3" type="audio/mpeg">
+                <a href="https://mdn.github.io/shared-assets/audio/t-rex-roar.mp3">Download the audio</a>
+            </audio>
+        </section>
+
+        <section>
+            <h2>Video</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <video controls preload="none" width="320">
+                <source src="https://mdn.github.io/shared-assets/videos/flower.webm" type="video/webm">
+                <source src="https://mdn.github.io/shared-assets/videos/flower.mp4" type="video/mp4">
+                <a href="https://mdn.github.io/shared-assets/videos/flower.mp4">Download the video</a>
+            </video>
+        </section>
+
+        <section>
+            <h2>Canvas</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <canvas id="monogram" width="200" height="100">A “PB” monogram drawn inside a box.</canvas>
+            <noscript>
+                <p>Turn on JavaScript to see the canvas drawing.</p>
+            </noscript>
+            <script>
+                const ctx = document.getElementById("monogram").getContext("2d");
+                ctx.strokeRect(10, 10, 180, 80);
+                ctx.font = "40px sans-serif";
+                ctx.fillText("PB", 70, 65);
+            </script>
+        </section>
+
+        <section>
+            <h2>MathML</h2>
+            <math display="block">
+                <mi>E</mi>
+                <mo>=</mo>
+                <mi>m</mi>
+                <msup>
+                    <mi>c</mi>
+                    <mn>2</mn>
+                </msup>
+            </math>
+            <p>MathML has been part of the HTML standard for years, but browser support was uneven. Firefox has
+                supported it since version 2 and Safari since version 10, while Chrome added it in version 24 and then
+                removed it because it was unstable. Chrome and Edge only shipped MathML again in version 109, in January
+                2023, so until then most sites used images or libraries like MathJax instead.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Pratyush Bhattacharya<br>© 2026 · Built with semantic HTML · Last updated <time datetime="2026-10-19">October
+                19, 2026</time></p>
+        <ul>
+            <li><a href="mailto:name@example.com">Email</a></li>
+            <li><a href="https://github.com/">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/">LinkedIn</a></li>
+            <li><a href="assets/docs/pratyush-bhattacharya-resume.pdf">Resume (PDF)</a></li>
+        </ul>
+    </footer>
+</body>
+
+</html>

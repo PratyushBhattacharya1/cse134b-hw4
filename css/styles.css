@@ -1,0 +1,292 @@
+:root {
+    color-scheme: light dark;
+
+    --main-font: Tahoma, sans-serif;
+
+    --bg-color: light-dark(#f9f9f7, #15202b);
+    --bg-accent-color: light-dark(#efeee8, #22303c);
+    --button-hover-color: light-dark(#e5e3d9, #192734);
+    --border-color: light-dark(#d6d4c8, #38444d);
+    --text-color: light-dark(#000000, #ffffff);
+    --accent-color: light-dark(#0F8017, #7FF087);
+    --max-page-width: 60rem;
+    --max-page-margin: auto;
+    --spacing: 1rem;
+    --pill-radius: 999px;
+}
+
+html[data-theme="light"] {
+    color-scheme: light;
+}
+
+html[data-theme="dark"] {
+    color-scheme: dark;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    font-family: var(--main-font);
+    color: var(--text-color);
+    accent-color: var(--accent-color);
+    line-height: 1.5;
+    margin: 0;
+}
+
+header>nav,
+main,
+footer {
+    max-width: var(--max-page-width);
+    margin: var(--max-page-margin);
+    padding: var(--spacing);
+}
+
+/* Headers */
+
+h1,
+h2,
+h3 {
+    line-height: 1.2;
+    margin: 1.5rem 0 0.5rem;
+}
+
+h1 {
+    font-size: 2.25rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+h3 {
+    font-size: 1.2rem;
+}
+
+a {
+    color: var(--accent-color);
+}
+
+a:hover {
+    color: var(--text-color);
+}
+
+a:focus,
+button:focus,
+input:focus,
+textarea:focus {
+    outline: 3px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+img,
+iframe,
+video {
+    max-width: 100%;
+}
+
+img,
+video {
+    height: auto;
+}
+
+header {
+    background-color: var(--bg-accent-color);
+}
+
+nav>menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+menu>li:last-child {
+    margin-left: auto;
+}
+
+menu a {
+    display: inline-block;
+    padding: 0.5em 1.25em;
+    border: 2px solid transparent;
+    border-radius: var(--pill-radius);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+menu a:hover {
+    background-color: var(--button-hover-color);
+}
+
+menu a[aria-current="page"] {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+}
+
+menu a[download],
+button {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+}
+
+menu a[download]:hover,
+button:hover {
+    background-color: var(--text-color);
+}
+
+footer {
+    border-top: 1px solid var(--border-color);
+    font-size: 0.875rem;
+}
+
+footer ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing);
+    list-style-type: none;
+    padding: 0;
+}
+
+action-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing);
+    margin: var(--spacing) 0;
+}
+
+project-meta {
+    display: block;
+    margin-top: var(--spacing);
+    color: var(--accent-color);
+    font-size: 0.875rem;
+}
+
+project-meta+h2,
+project-meta+h3 {
+    margin-top: 0.25rem;
+}
+
+ul:has(tech-tag) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    list-style-type: none;
+    padding: 0;
+}
+
+tech-tag {
+    display: inline-block;
+    padding: 0.1em 0.75em;
+    border: 1px solid var(--accent-color);
+    border-radius: var(--pill-radius);
+    font-size: 0.875rem;
+}
+
+article,
+aside {
+    border: 1px solid var(--border-color);
+    border-radius: 0.75rem;
+    padding: var(--spacing);
+    margin: var(--spacing) 0;
+}
+
+.filters a {
+    display: inline-block;
+    margin: 0.25rem 0;
+    padding: 0.25em 0.9em;
+    border: 1px solid var(--accent-color);
+    border-radius: var(--pill-radius);
+    text-decoration: none;
+}
+
+.filters a:hover {
+    background-color: var(--button-hover-color);
+}
+
+svg rect,
+svg line {
+    stroke: currentColor;
+}
+
+svg text {
+    fill: currentColor;
+}
+
+dt {
+    font-weight: bold;
+}
+
+dd {
+    margin: 0 0 0.5rem;
+}
+
+aside>h2 {
+    margin-top: 0;
+}
+
+aside~section {
+    clear: both;
+}
+
+aside {
+    float: right;
+    width: 18rem;
+    margin: 0 0 var(--spacing) var(--spacing);
+}
+
+form>div {
+    margin-bottom: var(--spacing);
+}
+
+form>div>label {
+    display: block;
+    font-weight: bold;
+}
+
+input:not([type="radio"]),
+textarea {
+    width: 100%;
+    max-width: 30rem;
+    padding: 0.4em;
+    font: inherit;
+}
+
+fieldset {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.5rem;
+    align-items: center;
+    max-width: 30rem;
+    margin: 0 0 var(--spacing);
+}
+
+button {
+    padding: 0.5em 1.25em;
+    border: none;
+    border-radius: var(--pill-radius);
+    font: inherit;
+    cursor: pointer;
+}
+
+canvas {
+    background-color: white;
+}
+
+@media (max-width: 48rem) {
+    aside {
+        float: none;
+        width: auto;
+        margin: var(--spacing) 0;
+    }
+}
+
+@view-transition {
+    navigation: auto;
+}
