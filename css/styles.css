@@ -7,6 +7,7 @@
     --bg-accent-color: light-dark(#efeee8, #22303c);
     --button-hover-color: light-dark(#e5e3d9, #192734);
     --border-color: light-dark(#d6d4c8, #38444d);
+    --field-border-color: light-dark(#767676, #8b98a5);
     --text-color: light-dark(#000000, #ffffff);
     --accent-color: light-dark(#0F8017, #7FF087);
     --max-page-width: 60rem;
@@ -241,57 +242,70 @@ aside {
     margin: 0 0 var(--spacing) var(--spacing);
 }
 
-form>div {
+/* One field per input-group: label, optional hint, control, optional error, stacked in a column */
+input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
     margin-bottom: var(--spacing);
 }
 
-form>div>label {
-    display: block;
+input-group>label {
     font-weight: bold;
 }
 
+input-hint {
+    display: block;
+    font-size: 0.875rem;
+}
+
+/* Fixed border width in every state; validation only changes the color, so nothing resizes */
 input:not([type="radio"]),
 textarea {
     width: 100%;
     max-width: 30rem;
     padding: 0.4em;
+    border: 2px solid var(--field-border-color);
     font: inherit;
 }
 
-label:has(+ .form-field:required)::after {
+input-group:has(> .form-field:required)>label::after {
     content: " *";
     color: red;
     vertical-align: super;
 }
 
 .form-field:user-invalid {
-    border: 0.1rem solid red;
-}
-
-input-hint {
-    display: none;
-    color: red;
-    font-size: small;
-    margin-top: 0.25rem;
-    grid-column: 2;
-}
-
-.form-field:user-invalid+input-hint {
-    display: block;
+    border-color: red;
 }
 
 .form-field:required:user-valid {
-    border-color: #188038;
-    border-width: 0.2rem;
+    border-color: green;
+}
+
+/* The error line always takes up its space; only its visibility toggles, so content below never moves */
+input-invalid-input {
+    display: block;
+    visibility: hidden;
+    color: red;
+    font-size: small;
+}
+
+.form-field:user-invalid+input-invalid-input {
+    visibility: visible;
 }
 
 fieldset {
+    max-width: 30rem;
+    margin: 0 0 var(--spacing);
+}
+
+/* Radio groups: each radio in the first column, its label in the second */
+fieldset:has(> input[type="radio"]) {
     display: grid;
     grid-template-columns: auto 1fr;
     gap: 0.5rem;
     align-items: center;
-    max-width: 30rem;
-    margin: 0 0 var(--spacing);
 }
 
 button {
@@ -300,6 +314,11 @@ button {
     border-radius: var(--pill-radius);
     font: inherit;
     cursor: pointer;
+}
+
+form:invalid button {
+    opacity: 0.3;
+    pointer-events: none;
 }
 
 canvas {

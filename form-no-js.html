@@ -29,20 +29,33 @@
         <form method="post" action="https://httpbin.org/post">
             <fieldset>
                 <legend>Comment Information</legend>
+                <p>Fields marked with * are required.</p>
 
-                <label for="name">Enter name:</label>
-                <input id="name" class="form-field" name="name" type="text" placeholder="John Doe" autocomplete="name" />
+                <input-group>
+                    <label for="name">Enter name:</label>
+                    <input-hint id="name-hint">Up to 100 characters.</input-hint>
+                    <input id="name" class="form-field" name="name" type="text" placeholder="John Doe"
+                        autocomplete="name" minlength="1" maxlength="100" required aria-describedby="name-hint" />
+                    <input-invalid-input aria-label="Error">Invalid input</input-invalid-input>
+                </input-group>
 
-                <label for="email">Enter email:</label>
-                <input id="email" class="form-field" name="email" type="email" placeholder="John_Doe@email.com" autocomplete="email"
-                    required />
-                <input-hint aria-label="Error">This field is required.</input-hint>
+                <input-group>
+                    <label for="email">Enter email:</label>
+                    <input-hint id="email-hint">Use the format name@example.com.</input-hint>
+                    <input id="email" class="form-field" name="email" type="email" placeholder="JohnDoe@email.com"
+                        autocomplete="email" required aria-describedby="email-hint" />
+                    <input-invalid-input aria-label="Error">Invalid input</input-invalid-input>
+                </input-group>
 
-                <label for="comment">Enter Comment:</label>
-                <textarea id="comment" class="form-field" name="comment" placeholder="I like your website..." required></textarea>
-                <input-hint aria-label="Error">This field is required.</input-hint>
+                <input-group>
+                    <label for="comment">Enter Comment:</label>
+                    <input-hint id="comment-hint">Between 10 and 1,000 characters.</input-hint>
+                    <textarea id="comment" class="form-field" name="comment" placeholder="I like your website..."
+                        minlength="10" maxlength="1000" required aria-describedby="comment-hint"></textarea>
+                    <input-invalid-input aria-label="Error">Invalid input</input-invalid-input>
+                </input-group>
 
-                <input id="possible_bot" name="possible_bot" type="hidden" value="true" required>
+                <input id="possible_bot" name="possible_bot" type="hidden" value="true">
 
                 <button type="submit">Submit</button>
 
