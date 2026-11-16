@@ -10,6 +10,7 @@
     --field-border-color: light-dark(#767676, #8b98a5);
     --text-color: light-dark(#000000, #ffffff);
     --accent-color: light-dark(#0F8017, #7FF087);
+    --warning-color: light-dark(#8a4b00, #ffcc66);
     --max-page-width: 60rem;
     --max-page-margin: auto;
     --spacing: 1rem;
@@ -242,7 +243,6 @@ aside {
     margin: 0 0 var(--spacing) var(--spacing);
 }
 
-/* One field per input-group: label, optional hint, control, optional error, stacked in a column */
 input-group {
     display: flex;
     flex-direction: column;
@@ -259,7 +259,6 @@ input-hint {
     font-size: 0.875rem;
 }
 
-/* Fixed border width in every state; validation only changes the color, so nothing resizes */
 input:not([type="radio"]),
 textarea {
     width: 100%;
@@ -283,7 +282,6 @@ input-group:has(> .form-field:required)>label::after {
     border-color: green;
 }
 
-/* The error line always takes up its space; only its visibility toggles, so content below never moves */
 input-invalid-input {
     display: block;
     visibility: hidden;
@@ -300,7 +298,6 @@ fieldset {
     margin: 0 0 var(--spacing);
 }
 
-/* Radio groups: each radio in the first column, its label in the second */
 fieldset:has(> input[type="radio"]) {
     display: grid;
     grid-template-columns: auto 1fr;
@@ -333,6 +330,97 @@ canvas {
     }
 }
 
-@view-transition {
-    navigation: auto;
+/* ---------- Homework 4, Part 3: JavaScript form enhancements ---------- */
+
+/* The display rules below would otherwise override the hidden attribute */
+[hidden] {
+    display: none;
+}
+
+/* Part 2 dims Submit and blocks clicks on it while the form is invalid. Once form.js is
+   running, pressing Submit is how errors get explained and recorded, so it stays usable. */
+form.enhanced:invalid button {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+info-area,
+error-area {
+    display: block;
+}
+
+info-area {
+    margin-bottom: var(--spacing);
+    font-size: 0.875rem;
+}
+
+/* Near or at the character limit, form.js changes the wording and adds this class */
+info-area.warning {
+    color: var(--warning-color);
+    font-weight: bold;
+}
+
+/* One output per field. It only becomes a box once it has text, so an empty one takes no space. */
+error-area output:not(:empty) {
+    display: block;
+    margin-top: 0.5rem;
+    padding: 0.4em 0.75em;
+    border-left: 0.25rem solid red;
+    background-color: var(--bg-accent-color);
+}
+
+/* Errors are labelled in words, not only by the red border */
+error-area output:not(:empty)::before {
+    content: "Error: ";
+    font-weight: bold;
+}
+
+/* ---------- Homework 4, Part 4: theme switch and view transition ---------- */
+
+/* Theme picker in the nav: its label beside a pill-shaped dropdown, in smaller text
+   because it is a setting rather than a page */
+menu li:has(> select) {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+}
+
+menu select {
+    padding: 0.6em 0.5em;
+    border: 2px solid var(--field-border-color);
+    border-radius: var(--pill-radius);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font: inherit;
+    cursor: pointer;
+}
+
+menu select:hover {
+    background-color: var(--button-hover-color);
+}
+
+select:focus {
+    outline: 3px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+/* Fade between themes. js/theme.js adds the theme-fade class only while switching, so
+   hover effects stay instant. Reduced-motion visitors get an instant switch. */
+@media (prefers-reduced-motion: no-preference) {
+
+    .theme-fade,
+    .theme-fade *,
+    .theme-fade *::before,
+    .theme-fade *::after {
+        transition: background-color 0.4s, color 0.4s, border-color 0.4s;
+    }
+}
+
+/* Cross-fade between pages with the View Transition API. Visitors who ask their device
+   for reduced motion never opt in, so they get a normal, instant page change. */
+@media (prefers-reduced-motion: no-preference) {
+    @view-transition {
+        navigation: auto;
+    }
 }

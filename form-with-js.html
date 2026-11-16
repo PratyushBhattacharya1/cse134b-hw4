@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A form for HW 4 that uses HTML, CSS, and JavaScript" />
+    <title>Form with JS</title>
+    <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/theme.js"></script>
+    <script src="js/form.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <menu aria-label="Main Navigation">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="form-no-js.html">No-JS form</a></li>
+                <li><a href="form-with-js.html" aria-current="page">JS form</a></li>
+                <li><a href="assets/docs/pratyush-bhattacharya-resume.pdf" download>Resume</a></li>
+                <li hidden>
+                    <label for="theme-picker">Theme</label>
+                    <select id="theme-picker">
+                        <option value="system">System default</option>
+                        <option value="light">Light</option>
+                        <option value="dark">Dark</option>
+                    </select>
+                </li>
+            </menu>
+        </nav>
+    </header>
+
+    <main>
+        <h1>JavaScript form</h1>
+
+        <form method="post" action="https://httpbin.org/post">
+            <fieldset>
+                <legend>Comment Information</legend>
+                <p>Fields marked with * are required.</p>
+
+                <input-group>
+                    <label for="name">Enter name:</label>
+                    <input-hint id="name-hint">Up to 100 characters.</input-hint>
+                    <input id="name" class="form-field" name="name" type="text" placeholder="John Doe"
+                        autocomplete="name" minlength="1" maxlength="100" required
+                        aria-describedby="name-hint name-error" />
+                    <input-invalid-input aria-label="Error">Invalid input</input-invalid-input>
+                </input-group>
+
+                <input-group>
+                    <label for="email">Enter email:</label>
+                    <input-hint id="email-hint">Use the format name@example.com.</input-hint>
+                    <input id="email" class="form-field" name="email" type="email" placeholder="JohnDoe@email.com"
+                        autocomplete="email" required aria-describedby="email-hint email-error" />
+                    <input-invalid-input aria-label="Error">Invalid input</input-invalid-input>
+                </input-group>
+
+                <input-group>
+                    <label for="comment">Enter Comment:</label>
+                    <input-hint id="comment-hint">Between 10 and 1,000 characters.</input-hint>
+                    <textarea id="comment" class="form-field" name="comment" placeholder="I like your website..."
+                        minlength="10" maxlength="1000" required
+                        aria-describedby="comment-hint comment-info comment-error"></textarea>
+                    <input-invalid-input aria-label="Error">Invalid input</input-invalid-input>
+                </input-group>
+
+                <!-- Everything from here to the end of the form that is marked hidden or disabled
+                     belongs to js/form.js, which switches it on. Without JavaScript the message
+                     areas stay out of sight and the empty form-errors field is not submitted.
+                     Each <output> is a polite live region by default, so screen readers
+                     announce new messages. -->
+                <info-area id="comment-info" hidden>
+                    <span id="comment-count"></span>
+                    <output id="comment-warning" for="comment"></output>
+                </info-area>
+
+                <input id="possible_bot" name="possible_bot" type="hidden" value="true">
+                <input id="form-errors" name="form-errors" type="hidden" disabled>
+
+                <button type="submit">Submit</button>
+
+                <error-area hidden>
+                    <output id="name-error" for="name"></output>
+                    <output id="email-error" for="email"></output>
+                    <output id="comment-error" for="comment"></output>
+                </error-area>
+
+            </fieldset>
+        </form>
+    </main>
+
+    <footer>
+        <p>Pratyush Bhattacharya<br>© 2026</p>
+        <ul>
+            <li><a href="mailto:pratyushbhattacharya1@gmail.com">Email</a></li>
+            <li><a href="https://github.com/PratyushBhattacharya1">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/pratyush--bhattacharya/">LinkedIn</a></li>
+            <li><a href="assets/docs/pratyush-bhattacharya-resume.pdf">Resume (PDF)</a></li>
+        </ul>
+    </footer>
+</body>
+
+</html>
